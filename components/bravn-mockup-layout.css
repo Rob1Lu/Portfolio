@@ -1,0 +1,196 @@
+/* Bravn section with mockup on the right side (desktop only) */
+@media (min-width: 1024px) {
+    .portfolio-app.bravn-app .app-content {
+        display: flex;
+        gap: 40px;
+        align-items: flex-start;
+    }
+
+    .portfolio-app.bravn-app .app-info-wrapper {
+        flex: 1;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .portfolio-app.bravn-app .app-demo {
+        flex-shrink: 0;
+        width: 280px;
+        max-height: 550px;
+        overflow: visible;
+    }
+
+    .portfolio-app.bravn-app .app-demo h4 {
+        display: none;
+    }
+
+    .portfolio-app.bravn-app .iphone-mockup {
+        padding: 0;
+        transform: scale(0.85);
+        transform-origin: top center;
+        margin-bottom: -80px;
+    }
+}
+
+/* ShotPro section with mockup on the left side (desktop only) */
+@media (min-width: 1024px) {
+    .portfolio-app.shotpro-app .app-content {
+        display: flex;
+        gap: 40px;
+        align-items: flex-start;
+    }
+
+    .portfolio-app.shotpro-app .app-demo {
+        flex-shrink: 0;
+        width: 280px;
+        order: -1;
+        /* Place mockup on the left */
+        max-height: 550px;
+        overflow: visible;
+    }
+
+    .portfolio-app.shotpro-app .app-info-wrapper {
+        flex: 1;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .portfolio-app.shotpro-app .app-demo h4 {
+        display: none;
+    }
+
+    .portfolio-app.shotpro-app .iphone-mockup {
+        padding: 0;
+        transform: scale(0.85);
+        transform-origin: top center;
+        margin-bottom: -80px;
+    }
+}
+
+/* Oskar section with mockup on the right side (desktop only) */
+@media (min-width: 1024px) {
+    .portfolio-app.oskar-app .app-content {
+        display: flex;
+        gap: 40px;
+        align-items: flex-start;
+    }
+
+    .portfolio-app.oskar-app .app-info-wrapper {
+        flex: 1;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .portfolio-app.oskar-app .app-demo {
+        flex-shrink: 0;
+        width: 280px;
+        max-height: 550px;
+        overflow: visible;
+    }
+
+    .portfolio-app.oskar-app .app-demo h4 {
+        display: none;
+    }
+
+    .portfolio-app.oskar-app .iphone-mockup {
+        padding: 0;
+        transform: scale(0.85);
+        transform-origin: top center;
+        margin-bottom: -80px;
+    }
+}
+
+/* Tamar section with mockup on the left side (desktop only) */
+@media (min-width: 1024px) {
+    .portfolio-app.tamar-app .app-content {
+        display: flex;
+        gap: 40px;
+        align-items: flex-start;
+    }
+
+    .portfolio-app.tamar-app .app-demo {
+        flex-shrink: 0;
+        width: 280px;
+        order: -1;
+        /* Place mockup on the left */
+        max-height: 550px;
+        overflow: visible;
+    }
+
+    .portfolio-app.tamar-app .app-info-wrapper {
+        flex: 1;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .portfolio-app.tamar-app .app-demo h4 {
+        display: none;
+    }
+
+    .portfolio-app.tamar-app .iphone-mockup {
+        padding: 0;
+        transform: scale(0.85);
+        transform-origin: top center;
+        margin-bottom: -80px;
+    }
+}
+
+/* Mobile: reorder to show mockup after description, before features */
+@media (max-width: 1024px) {
+
+    .portfolio-app.bravn-app .app-content,
+    .portfolio-app.shotpro-app .app-content,
+    .portfolio-app.oskar-app .app-content,
+    .portfolio-app.tamar-app .app-content {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    /* app-info-wrapper contains description, features, and stores */
+    .portfolio-app.bravn-app .app-info-wrapper,
+    .portfolio-app.shotpro-app .app-info-wrapper,
+    .portfolio-app.oskar-app .app-info-wrapper,
+    .portfolio-app.tamar-app .app-info-wrapper {
+        display: contents;
+    }
+
+    /* Order elements at app-content level */
+    .portfolio-app.bravn-app .app-description,
+    .portfolio-app.shotpro-app .app-description,
+    .portfolio-app.oskar-app .app-description,
+    .portfolio-app.tamar-app .app-description {
+        order: 1;
+    }
+
+    .portfolio-app.bravn-app .app-demo,
+    .portfolio-app.shotpro-app .app-demo,
+    .portfolio-app.oskar-app .app-demo,
+    .portfolio-app.tamar-app .app-demo {
+        order: 2;
+    }
+
+    .portfolio-app.bravn-app .app-features,
+    .portfolio-app.shotpro-app .app-features,
+    .portfolio-app.oskar-app .app-features,
+    .portfolio-app.tamar-app .app-features {
+        order: 3;
+    }
+
+    .portfolio-app.bravn-app .app-stores,
+    .portfolio-app.shotpro-app .app-stores,
+    .portfolio-app.oskar-app .app-stores,
+    .portfolio-app.tamar-app .app-stores {
+        order: 4;
+    }
+
+    .portfolio-app.bravn-app .app-demo h4,
+    .portfolio-app.shotpro-app .app-demo h4,
+    .portfolio-app.oskar-app .app-demo h4,
+    .portfolio-app.tamar-app .app-demo h4 {
+        display: block;
+    }
+}

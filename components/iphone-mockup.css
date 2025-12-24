@@ -1,0 +1,270 @@
+/* iPhone Mockup Styles - Modern iPhone 15/16 with Dynamic Island */
+.iphone-mockup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    perspective: 1000px;
+}
+
+.iphone-frame {
+    position: relative;
+    width: 300px;
+    height: 640px;
+    background: #000;
+    border-radius: 52px;
+    padding: 6px;
+    box-shadow:
+        0 0 0 1px #000,
+        0 0 0 2px #000,
+        0 35px 90px rgba(0, 0, 0, 0.7),
+        inset 0 0 10px rgba(0, 0, 0, 0.4);
+    transition: transform 0.1s ease-out;
+    transform: perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1);
+}
+
+/* Physical buttons - Silent switch */
+.iphone-frame::before {
+    content: '';
+    position: absolute;
+    left: -3px;
+    top: 100px;
+    width: 3px;
+    height: 28px;
+    background: linear-gradient(to right, #1a1a1a, #2a2a2a);
+    border-radius: 2px 0 0 2px;
+    box-shadow: inset -1px 0 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Physical buttons - Volume buttons */
+.iphone-frame::after {
+    content: '';
+    position: absolute;
+    left: -3px;
+    top: 145px;
+    width: 3px;
+    height: 60px;
+    background: linear-gradient(to right, #1a1a1a, #2a2a2a);
+    border-radius: 2px 0 0 2px;
+    box-shadow: inset -1px 0 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Dynamic Island - iPhone 15/16 style */
+.iphone-notch {
+    position: absolute;
+    top: 14px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90px;
+    height: 24px;
+    background: #000;
+    border-radius: 16px;
+    z-index: 10;
+    box-shadow:
+        inset 0 2px 4px rgba(0, 0, 0, 0.5),
+        0 0 0 1px rgba(255, 255, 255, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+
+/* Dynamic Island camera and sensors */
+.iphone-notch::before {
+    content: '';
+    position: absolute;
+    left: 16px;
+    width: 8px;
+    height: 8px;
+    background: radial-gradient(circle, rgba(30, 30, 50, 0.8), rgba(10, 10, 20, 1));
+    border-radius: 50%;
+    box-shadow: 0 0 2px rgba(100, 100, 150, 0.3);
+}
+
+.iphone-notch::after {
+    content: '';
+    position: absolute;
+    right: 16px;
+    width: 6px;
+    height: 6px;
+    background: rgba(255, 0, 0, 0.1);
+    border-radius: 50%;
+    box-shadow: 0 0 3px rgba(255, 0, 0, 0.2);
+}
+
+/* Physical button - Power button (right side) */
+.iphone-mockup .iphone-frame .iphone-screen::before {
+    content: '';
+    position: absolute;
+    right: -7px;
+    top: 155px;
+    width: 3px;
+    height: 80px;
+    background: linear-gradient(to left, #1a1a1a, #2a2a2a);
+    border-radius: 0 2px 2px 0;
+    box-shadow: inset 1px 0 2px rgba(0, 0, 0, 0.5);
+    z-index: -1;
+}
+
+.iphone-screen {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    border-radius: 48px;
+    overflow: hidden;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.iphone-home-indicator {
+    position: absolute;
+    bottom: 6px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 130px;
+    height: 5px;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 3px;
+    z-index: 10;
+}
+
+.screenshot-carousel {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.screenshot-container {
+    flex: 1;
+    position: relative;
+    width: 100%;
+    height: calc(100% - 60px);
+    overflow: hidden;
+}
+
+.screenshot-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+    pointer-events: none;
+}
+
+.screenshot-img.active {
+    opacity: 1;
+    z-index: 1;
+    pointer-events: auto;
+}
+
+.carousel-controls {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 15px;
+    z-index: 5;
+}
+
+.carousel-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #fff;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 12px;
+}
+
+.carousel-btn:hover {
+    background: rgba(255, 219, 112, 0.3);
+    border-color: var(--accent-yellow);
+    color: var(--accent-yellow);
+    transform: scale(1.1);
+}
+
+.carousel-btn:active {
+    transform: scale(0.95);
+}
+
+.carousel-dots {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dot:hover {
+    background: rgba(255, 255, 255, 0.5);
+    transform: scale(1.2);
+}
+
+.dot.active {
+    background: var(--accent-yellow);
+    width: 24px;
+    border-radius: 4px;
+}
+
+/* Light theme adjustments */
+[data-theme="light"] .iphone-frame {
+    background: #000;
+    box-shadow:
+        0 0 0 1px #000,
+        0 0 0 2px #000,
+        0 25px 70px rgba(0, 0, 0, 0.12),
+        inset 0 0 8px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="light"] .iphone-frame:hover {
+    box-shadow:
+        0 0 0 1px #000,
+        0 0 0 2px #000,
+        0 35px 90px rgba(0, 0, 0, 0.18),
+        inset 0 0 10px rgba(0, 0, 0, 0.4);
+}
+
+[data-theme="light"] .iphone-notch {
+    background: #000;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .iphone-frame {
+        width: 260px;
+        height: 550px;
+    }
+
+    .iphone-notch {
+        width: 95px;
+        height: 28px;
+    }
+
+    .carousel-btn {
+        width: 28px;
+        height: 28px;
+        font-size: 10px;
+    }
+}

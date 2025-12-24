@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robin LUSSON - Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="components/iphone-mockup.css">
+    <link rel="stylesheet" href="components/bravn-mockup-layout.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="profile-card">
+                <div class="profile-image" id="avatar-container">
+                    <img src="assets/images/avatar.png" alt="Profile Picture" id="avatar-img">
+                    <span class="status-indicator"></span>
+                </div>
+                <div class="profile-info">
+                    <h1 class="profile-name">Robin LUSSON</h1>
+                    <p class="profile-title" data-i18n="profileTitle">Software Developer</p>
+                </div>
+
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon-wrapper">
+                            <img src="assets/icons/icon-mail.svg" alt="Email" class="contact-icon">
+                        </div>
+                        <div>
+                            <span class="contact-label" data-i18n="emailLabel">EMAIL</span>
+                            <span class="contact-value">roblusson40@gmail.com</span>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon-wrapper">
+                            <img src="assets/icons/icon-phone.svg" alt="Phone" class="contact-icon">
+                        </div>
+                        <div>
+                            <span class="contact-label" data-i18n="phoneLabel">PHONE</span>
+                            <span class="contact-value">+33 6 84 58 15 59</span>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon-wrapper">
+                            <img src="assets/icons/icon-location.svg" alt="Location" class="contact-icon">
+                        </div>
+                        <div>
+                            <span class="contact-label" data-i18n="locationLabel">LOCATION</span>
+                            <span class="contact-value" data-i18n="locationValue">Lyon, France</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="settings-bar">
+                    <div class="language-switcher">
+                        <button class="lang-btn active" data-lang="fr">FR</button>
+                        <button class="lang-btn" data-lang="en">EN</button>
+                    </div>
+                    <button class="theme-toggle" id="theme-toggle">
+                        <i class="fas fa-sun"></i>
+                    </button>
+                </div>
+
+                <button class="burger-menu" id="burger-menu" aria-label="Toggle menu">
+                    <span class="burger-line"></span>
+                    <span class="burger-line"></span>
+                    <span class="burger-line"></span>
+                </button>
+
+                <div class="social-links">
+                    <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-google"></i></a>
+                </div>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <nav class="navbar">
+                <div class="nav-links">
+                    <a href="#about" class="nav-link active" data-section="about" data-i18n="navAbout">About</a>
+                    <a href="#resume" class="nav-link" data-section="resume" data-i18n="navResume">Resume</a>
+                    <a href="#portfolio" class="nav-link" data-section="portfolio"
+                        data-i18n="navPortfolio">Portfolio</a>
+                    <a href="#contact" class="nav-link" data-section="contact" data-i18n="navContact">Contact</a>
+
+                    <div class="nav-settings">
+                        <div class="nav-settings-group">
+                            <span class="nav-settings-label">Language</span>
+                            <div class="language-switcher">
+                                <button class="lang-btn active" data-lang="fr">FR</button>
+                                <button class="lang-btn" data-lang="en">EN</button>
+                            </div>
+                        </div>
+                        <div class="nav-settings-group">
+                            <span class="nav-settings-label">Theme</span>
+                            <button class="theme-toggle" id="theme-toggle-mobile">
+                                <i class="fas fa-sun"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="content-wrapper">
+                <section id="content-container" class="content-section active">
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <div id="lightbox" class="lightbox">
+        <div class="lightbox-backdrop"></div>
+        <div class="lightbox-content">
+            <button class="lightbox-close">&times;</button>
+            <img src="assets/images/me.jpeg" alt="Profile Full Size" class="lightbox-image">
+        </div>
+    </div>
+
+    <div id="cv-modal" class="cv-modal">
+        <div class="cv-modal-backdrop"></div>
+        <div class="cv-modal-content">
+            <button class="cv-modal-close">&times;</button>
+            <div class="cv-modal-header">
+                <h3>CV - Robin LUSSON</h3>
+                <a href="assets/cv/CV_Robin_LUSSON.pdf" download class="cv-download-link">
+                    <i class="fas fa-download"></i>
+                    <span data-i18n="downloadCV">Télécharger</span>
+                </a>
+            </div>
+            <iframe src="assets/cv/CV_Robin_LUSSON.pdf#view=FitH" class="cv-preview-iframe"></iframe>
+        </div>
+    </div>
+
+    <div id="profile-modal" class="profile-modal">
+        <div class="profile-modal-backdrop"></div>
+        <div class="profile-modal-content">
+            <button class="profile-modal-close">&times;</button>
+            <div class="profile-modal-header">
+                <img src="assets/images/me.jpeg" alt="Robin LUSSON" class="profile-modal-photo">
+                <h2 class="profile-modal-name">Robin LUSSON</h2>
+                <p class="profile-modal-title" data-i18n="profileTitle">Software Developer</p>
+            </div>
+            <div class="profile-modal-body">
+                <div class="profile-modal-section">
+                    <div class="contact-item">
+                        <div class="contact-icon-wrapper">
+                            <img src="assets/icons/icon-mail.svg" alt="Email" class="contact-icon">
+                        </div>
+                        <div>
+                            <span class="contact-label" data-i18n="emailLabel">EMAIL</span>
+                            <span class="contact-value">roblusson40@gmail.com</span>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon-wrapper">
+                            <img src="assets/icons/icon-phone.svg" alt="Phone" class="contact-icon">
+                        </div>
+                        <div>
+                            <span class="contact-label" data-i18n="phoneLabel">PHONE</span>
+                            <span class="contact-value">+33 6 84 58 15 59</span>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon-wrapper">
+                            <img src="assets/icons/icon-location.svg" alt="Location" class="contact-icon">
+                        </div>
+                        <div>
+                            <span class="contact-label" data-i18n="locationLabel">LOCATION</span>
+                            <span class="contact-value" data-i18n="locationValue">Lyon, France</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="profile-modal-social">
+                    <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-google"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="translations.js"></script>
+    <script src="script.js"></script>
+    <script src="components/iphone-mockup.js"></script>
+</body>
+
+</html>
