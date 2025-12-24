@@ -1269,6 +1269,8 @@ button,
 @media (max-width: 768px) {
     .content-wrapper {
         padding: 20px;
+        max-width: 100%;
+        overflow-x: hidden;
     }
 
     .section-title {
@@ -1281,6 +1283,34 @@ button,
 
     .skills-grid {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    .portfolio-grid {
+        gap: 30px;
+    }
+
+    .portfolio-app {
+        padding: 20px;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    .app-content {
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    .app-features ul {
+        grid-template-columns: 1fr;
+    }
+
+    .app-logo-wrapper {
+        width: 60px;
+        height: 60px;
+    }
+
+    .app-title {
+        font-size: 20px;
     }
 }
 

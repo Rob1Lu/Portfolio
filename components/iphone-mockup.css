@@ -252,19 +252,45 @@
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
+    .iphone-mockup {
+        padding: 20px 10px;
+    }
+
     .iphone-frame {
-        width: 260px;
-        height: 550px;
+        width: 220px;
+        height: 470px;
     }
 
     .iphone-notch {
-        width: 95px;
-        height: 28px;
+        width: 80px;
+        height: 22px;
+        top: 12px;
+    }
+
+    .iphone-notch::before {
+        left: 12px;
+        width: 6px;
+        height: 6px;
+    }
+
+    .iphone-notch::after {
+        right: 12px;
+        width: 5px;
+        height: 5px;
     }
 
     .carousel-btn {
         width: 28px;
         height: 28px;
         font-size: 10px;
+    }
+
+    .carousel-controls {
+        height: 50px;
+        padding: 0 10px;
+    }
+
+    .screenshot-container {
+        height: calc(100% - 50px);
     }
 }
